@@ -1,0 +1,97 @@
+{
+  "top_page": {
+    "subtitle": "広報活動とデザインを担うチーム"
+  },
+  "carousel_images": [
+    "images/2025第58回定期演奏会.jpg",
+    "images/2025SUMMERCONCERT.jpg",
+    "images/2024第57回定期演奏会.jpg",
+    "images/2024SUMMERCONCERT.jpg",
+    "images/2023第56回定期演奏会.jpg",
+    "images/2023SUMMERCONCERT.jpg",
+    "images/2022第55回定期演奏会.jpg",
+    "images/2022SUMMERCONCERT.jpg",
+    "images/2021第54回定期演奏会.jpg",
+    "images/2021SUMMERCONCERT.jpg"
+  ],
+  "organization": {
+    "チラシ・ポスター部": {
+      "top": "藤井 宰",
+      "members": ["河合 熙衛", "志水 悠吾", "橘 璃帆", "矢尾 優果"],
+      "tasks": {
+        "チラシ作成": {
+          "description": "演奏会のチラシをデザイン・印刷します。デザイン調整や印刷部数の管理も担当します。",
+          "pdf_link": "pdfs/チラシ作成詳細.pdf"
+        },
+        "パンフレット作成": {
+          "description": "演奏会当日に配布するパンフレットの制作。内容構成から印刷所への依頼までを担当します。",
+          "pdf_link": "pdfs/パンフレット作成詳細.pdf"
+        },
+        "静岡チラシ管理": {
+          "description": "静岡地区におけるチラシ配布や設置の調整・管理を担当します。",
+          "pdf_link": "pdfs/静岡チラシ管理詳細.pdf"
+        },
+        "浜松チラシ管理": {
+          "description": "浜松地区におけるチラシ配布や設置の調整・管理を担当します。",
+          "pdf_link": "pdfs/浜松チラシ管理詳細.pdf"
+        }
+      }
+    },
+    "許可申請部": {
+      "top": "川又 遥",
+      "members": ["市場 幹九郎", "安本 龍月"],
+      "tasks": {
+        "事業報告、後援申請": {
+          "description": "演奏会後の報告や、後援申請のための書類作成と提出を担当します。",
+          "pdf_link": "pdfs/事業報告詳細.pdf"
+        },
+        "バンドジャーナル": {
+          "description": "音楽雑誌「バンドジャーナル」への掲載依頼や調整を行います。",
+          "pdf_link": "pdfs/バンドジャーナル詳細.pdf"
+        },
+        "プレイガイド": {
+          "description": "プレイガイドへの演奏会情報の登録や、チケット取り扱いの調整を行います。",
+          "pdf_link": "pdfs/プレイガイド詳細.pdf"
+        }
+      }
+    },
+    "広報部": {
+      "top": "佐野 史弥",
+      "members": ["児玉 翔", "伊東 陽菜", "山田すずの"],
+      "tasks": {
+        "挟み込み、置きチラシ": {
+          "description": "他団体演奏会へのチラシ挟み込み依頼や、各所への置きチラシを担当します。",
+          "pdf_link": "pdfs/挟み込み置きチラシ詳細.pdf"
+        },
+        "広報活動日": {
+          "description": "学内外での広報活動日程を調整し、実施を管理します。",
+          "pdf_link": "pdfs/広報活動日詳細.pdf"
+        },
+        "広報アンサンブル": {
+          "description": "広報のための小編成演奏（アンサンブル）を企画・運営します。",
+          "pdf_link": "pdfs/広報アンサンブル詳細.pdf"
+        },
+        "駅チラシ": {
+          "description": "駅前でのチラシ配布活動を企画・実施します。",
+          "pdf_link": "pdfs/駅チラシ詳細.pdf"
+        },
+        "構内ポスターツアー、構内チラシ配り": {
+          "description": "大学構内でのポスター掲示や、授業間でのチラシ配布を実施します。",
+          "pdf_link": "pdfs/構内活動詳細.pdf"
+        }
+      }
+    }
+  },
+  "file_data": {
+    "チラシ・ポスター部": {
+      "drive_link": "https://drive.google.com/drive/folders/XXXXXXX"
+    },
+    "許可申請部": {
+      "drive_link": "https://drive.google.com/drive/folders/YYYYYYY"
+    },
+    "広報部": {
+      "drive_link": "https://drive.google.com/drive/folders/ZZZZZZZ"
+    }
+  }
+}
+

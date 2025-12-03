@@ -1,0 +1,50 @@
+/* ===== メインコンテンツ ===== */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* ===== タイトル文字 ===== */
+.top-title p {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-align: center;
+    text-shadow: 0 0 10px var(--color-shadow),
+                 0 0 15px var(--color-shadow);
+    margin-top: 100px;
+    margin-bottom: 5px;
+}
+
+.sub-title h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--color-text-main);
+    text-align: center;
+    text-shadow: 0 0 8px var(--color-shadow),
+                 0 0 15px var(--color-shadow);
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* ===== 秘密の音符ボタン ===== */
+#secretNote {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0.6;
+    user-select: none;
+    z-index: 150;
+}
+
+#secretNote:hover {
+    opacity: 1;
+}

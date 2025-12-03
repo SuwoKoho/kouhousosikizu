@@ -1,0 +1,77 @@
+/* ===== [過去のデータページスタイル設定] ===== */
+
+/* ページ説明文 */
+.file-intro {
+    font-size: 1.1em;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-text-main);
+    margin-bottom: 30px;
+    color: var(--color-text-main);
+}
+
+/* 各部署ボックスの全体デザイン */
+.file-department {
+    background: var(--color-text-main);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px var(--color-text-dark);
+    margin-bottom: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* 部署ボックスにマウスが乗ったときの効果 */
+.file-department:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px var(--color-shadow); 
+}
+
+/* ===== 部署名見出し ===== */
+.file-department h2 {
+    color: var(--color-primary); 
+    margin: 0 0 15px 0; 
+    font-size: 1.6em; 
+    padding-bottom: 10px; 
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Driveリンクボックス */
+.drive-link-box {
+    margin-top: 15px;
+    padding: 20px; 
+    text-align: center; 
+    background: var(--color-bg-light); 
+    border-radius: 12px; 
+    border: 1px solid var(--color-bg-light); 
+    transition: background-color 0.3s, transform 0.2s;
+}
+/* Driveリンクボックスにマウスが乗ったときの効果 */
+.drive-link-box:hover {
+    background-color: var(--color-bg-light); 
+    transform: scale(1.02); 
+}
+
+/* リンクボタンのデザイン */
+.drive-link {
+    display: inline-block; 
+    background-color: var(--color-primary); 
+    color: var(--color-bg-light); 
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.25s, transform 0.1s;
+}
+/* リンクボタンにマウスが乗ったときの効果 */
+.drive-link:hover {
+    background-color: #005fa3; 
+    transform: scale(1.05); 
+}
+
+/* エラーメッセージ */
+#loading-error {
+    color: red; 
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}

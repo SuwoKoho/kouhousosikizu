@@ -1,0 +1,49 @@
+/* omikuji.css */
+body {
+  background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+  font-family: "Zen Maru Gothic", "Yu Gothic", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 320px;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #ffcc00;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffe066;
+}
+
+#omikujiResult {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}

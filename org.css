@@ -1,0 +1,192 @@
+/* ==== [組織図ページスタイル設定] ===== */
+
+/* 組織図 */
+main {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin-top: 100px;   
+    min-height: auto; 
+    max-width: 100%;
+    text-align: center; 
+    z-index: 10;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+.org-chart {
+    max-width: 800px; 
+    margin: 100px auto; 
+    padding: 0 20px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+}
+
+/* 大枠：部署全体 */
+.department {
+    background: var(--color-bg-light);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px var(--color-shadow); 
+}
+.department h3 { 
+    color: var(--color-primary); 
+    margin-top: 0; 
+}
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 小枠：個別の仕事内容 */
+.task {
+    background: var(--color-bg-light); 
+    padding: 12px 16px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px var(--color-shadow); 
+    cursor: pointer; 
+    transition: transform 0.2s; 
+    text-align: center; 
+}
+.task:hover { 
+    transform: translateY(-3px); 
+}
+.task .title {
+    font-weight: bold; 
+    color: var(--color-primary); 
+}
+
+/* カード：モーダル */
+.modal {
+    display: none; 
+    position: fixed; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background: var(--color-shadow); 
+    z-index: 10; 
+}
+.modal-content {
+    background: var(--color-bg-light); 
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 16px;
+    max-width: 500px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* メンバー表示トグルボタン */
+.member-toggle {
+    background-color: var(--color-bg-light); 
+    color: var(--color-primary); 
+    border: 3px solid var(--color-accent); 
+    padding: 8px 15px; 
+    margin: 10px 0; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    transition: background-color 0.2s; 
+    width: 100%; 
+}
+.member-toggle:hover {
+    background-color: var(--color-bg-light); 
+}
+.member-toggle[aria-expanded="true"] { 
+    background-color: var(--color-primary); 
+    color: var(--color-bg-light); 
+}
+
+/* メンバーリストのコンテナ */
+.member-list-container {
+    padding: 10px; 
+    border-top: 1px solid var(--color-accent); 
+    margin-top: 10px; 
+}
+/* トップの名前 */
+.manager {
+    font-weight: bold; 
+    color: var(--color-accent); 
+    margin-bottom: 5px; 
+    display: block; 
+    border-bottom: 2px dotted var(--color-accent); 
+    padding-bottom: 5px; 
+}
+/* メンバー一覧のリスト */
+.member-list {
+    list-style-type: none; 
+    padding: 0; 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px; 
+    margin-top: 10px; 
+}
+.member-list li {
+    background: var(--color-primary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* PDFリンクボタンのスタイル */
+.pdf-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: var(--color-accent);
+    color: var(--color-bg-light);
+    text-decoration: none; 
+    font-weight: bold; 
+    border-radius: 8px; 
+    transition: background-color 0.2s; 
+    box-shadow: 0 4px 8px var(--color-shadow); 
+}
+
+.pdf-button:hover {
+    background-color: #a76511; 
+}
+
+/* 組織図（トグルリスト）設定セクション */
+.organization-chart ul {
+    list-style-type: none; 	 	 /* リストの記号（点など）を非表示 */
+    padding-left: 0;
+    margin: 0;
+}
+
+/* 階層ごとのスタイル調整 */
+.organization-chart li {
+    position: relative;
+    margin-left: 20px; 	 	 /* 階層のインデント */
+    padding: 5px 0 5px 20px; 	 /* トグルアイコンのための左側の内側余白 */
+}
+
+/* トグルリストのスタイル */
+.organization-chart .toggle {
+    font-weight: bold;
+    cursor: pointer; 	 	 /* クリック可能のカーソル */
+}
+
+.organization-chart .toggle::before {
+    content: '+'; 	 	 /* 展開前のアイコンとして'+'を表示 */
+    position: absolute;
+    left: 0; 	 	 	 /* 左端に配置 */
+    top: 5px;
+    font-size: 1.2em;
+}
+
+.organization-chart .toggle.expanded::before {
+    content: '-'; 	 	 /* 展開後のアイコンとして'-'を表示 */
+}
+
+/* ===== 非表示にするリスト ===== */
+.organization-chart .sub-list {
+    display: none; 	 	 /* 初期状態では子リストを非表示 */
+}

@@ -1,0 +1,160 @@
+/* ===== [共通スタイル設定] ===== */
+
+/* カラーパレット定義 */
+:root {
+    --color-primary: #1b718b;    /* メインカラー（背景など） */
+    --color-primary-dark: #96321b;
+    --color-accent: #ef9119;     /* アクセントカラー（ボタン・見出しなど） */
+    --color-bg-light: #f2ebea;   /* 背景の淡色（カードなど） */
+    --color-text-main: #ffffff;  /* メインテキスト色 */
+    --color-text-dark: #333333;  /* サブテキスト・濃色文字 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* 全ての要素にbox-sizing: border-boxを適用 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* HTMLとBODYの基本設定 */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0; 
+    padding: 0;
+}
+
+/* ページ全体の設定 */
+body {
+    margin: 0; 
+    font-family: "Noto Sans JP", sans-serif; 
+    background-color: var(--color-primary); 
+    color: var(--color-text-main);
+    overflow-x: hidden; 
+    position: relative; 
+}
+
+/* パーティクル背景 */
+#particle-bg {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 0; 
+    background: var(--color-bg-light); 
+}
+
+/* ナビゲーションバー */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--color-primary-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 100;
+}
+
+/* ナビゲーションロゴなど左側 */
+.navbar-left {
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+
+/* ハンバーガーメニュー */
+.menu-toggle {
+    display: none;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-end; 
+    gap: 5px; 
+    cursor: pointer; 
+    position: relative;
+    z-index: 99999;
+}
+
+.menu-toggle div {
+    display: block;
+    width: 28px;
+    height: 5px;
+    background-color: var(--color-text-main);
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+/* メニュー本体 */
+.nav-links {
+    display: flex;
+    gap: 20px; 
+    transition: all 0.3s ease; 
+}
+
+.nav-links a {
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    text-shadow: 0 0 10px var(--color-text-main); 
+}
+
+/* ナビバー下余白 */
+main {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-top: 100px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+/* スマホ用　*/
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 5px;
+        flex-direction: column;
+        background-color: var(--color-primary); 
+        width: 180px;
+        padding: 10px;
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 0 5px 15px var(--color-text-dark);
+    }
+    .nav-links.open {
+        display: flex;
+        animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--color-text-main);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-primary);
+    z-index: 99;
+}
