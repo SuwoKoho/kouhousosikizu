@@ -10,7 +10,7 @@ main {
     box-sizing: border-box;
 }
 
-/* ===== タイトル文字 ===== */
+/* ===== 静岡大学吹奏楽団 ===== */
 .top-title p {
     font-size: 2.2rem;
     font-weight: 700;
@@ -22,6 +22,7 @@ main {
     margin-bottom: 5px;
 }
 
+/* ===== 広報係 ===== */
 .sub-title h1 {
     font-size: 5rem;
     font-weight: 900;
