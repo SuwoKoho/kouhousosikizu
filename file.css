@@ -1,12 +1,17 @@
 /* ===== [過去のデータページスタイル設定] ===== */
 
 main {
-    padding-top: 50px;
+    padding-top: 80px;
     padding-bottom: 150px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+h1{
+    color: var(--color-text-light);
+    margin-bottom: 10px;
 }
 
 /* ページ説明文 */
