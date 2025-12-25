@@ -14,7 +14,7 @@ main {
 .top-title p {
     font-size: 2.2rem;
     font-weight: 700;
-    color: var(--color-text-light);
+    color: var(--color-bg-light);
     text-align: center;
     text-shadow: 0 0 10px var(--color-shadow),
                  0 0 15px var(--color-shadow);
@@ -26,7 +26,7 @@ main {
 .sub-title h1 {
     font-size: 5rem;
     font-weight: 900;
-    color: var(--color-text-light);
+    color: var(--color-bg-light);
     text-align: center;
     text-shadow: 0 0 8px var(--color-shadow),
                  0 0 15px var(--color-shadow);

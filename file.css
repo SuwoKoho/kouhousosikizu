@@ -10,7 +10,7 @@ main {
 }
 
 h1{
-    color: var(--color-text-light);
+    color: var(--color-bg-light);
     margin-bottom: 10px;
 }
 
@@ -18,14 +18,14 @@ h1{
 .file-intro {
     font-size: 1.1em;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--color-text-light);
+    border-bottom: 1px solid var(--color-bg-light);
     margin-bottom: 30px;
-    color: var(--color-text-light);
+    color: var(--color-bg-light);
 }
 
 /* 各部署ボックスの全体デザイン */
 .file-department {
-    background: var(--color-text-light);
+    background: var(--color-bg-light);
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 6px 12px var(--color-text-dark);
@@ -53,14 +53,14 @@ h1{
     margin-top: 15px;
     padding: 20px; 
     text-align: center; 
-    background: var(--color-bg-light); 
+    background: #ff0000; 
     border-radius: 12px; 
-    border: 1px solid var(--color-bg-light); 
+    border: 1px solid var(--color-primary);
     transition: background-color 0.3s, transform 0.2s;
 }
 /* Driveリンクボックスにマウスが乗ったときの効果 */
 .drive-link-box:hover {
-    background-color: var(--color-bg-light); 
+    background-color: #ff0000;
     transform: scale(1.02); 
 }
 
