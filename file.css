@@ -48,22 +48,6 @@ h1{
     border-bottom: 2px solid var(--color-primary);
 }
 
-/* Driveリンクボックス */
-.drive-link-box {
-    margin-top: 15px;
-    padding: 20px; 
-    text-align: center; 
-    background: #ff0000; 
-    border-radius: 12px; 
-    border: 1px solid var(--color-primary);
-    transition: background-color 0.3s, transform 0.2s;
-}
-/* Driveリンクボックスにマウスが乗ったときの効果 */
-.drive-link-box:hover {
-    background-color: #ff0000;
-    transform: scale(1.02); 
-}
-
 /* リンクボタンのデザイン */
 .drive-link {
     display: inline-block; 

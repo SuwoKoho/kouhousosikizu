@@ -2,13 +2,13 @@
 
 /* カラーパレット定義 */
 :root {
-    --color-primary: #1b718b;    /* メインカラー */
-    --color-primary-dark: #155a6f;
-    --color-accent: #ef9119;     /* アクセントカラー */
-    --color-accent-dark:#bf7414;
-    --color-bg-light: #f2ebea;   /* 背景の淡色 */
-    --color-text-light: #ffffff;  /* メインテキスト白色 */
-    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-primary: #d4f9f9; /* メインカラー */
+    --color-primary-dark: #c7e2e6; /* メインカラーの10%暗い色 */
+    --color-accent: #dc143c; /* アクセントカラー */
+    --color-accent-dark:#4793a6; /* アクセントカラーの10%暗い色 */
+    --color-bg-light: #fff59d; /* 背景色（メインと逆が望ましい） */
+    --color-text-light: #ffffff; /* メインテキスト白色 */
+    --color-text-dark: #333333; /* メインテキスト黒色 */
     --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
 }
 
@@ -73,7 +73,7 @@
 }
 
 /* カラーパレット定義（６月未定） */
-:root {
+:root[data-thma="mitei"] {
     --color-primary: #1b718b;    /* メインカラー */
     --color-primary-dark: #155a6f;
     --color-accent: #ef9119;     /* アクセントカラー */
@@ -97,7 +97,7 @@
 }
 
 /* カラーパレット定義（８月未定） */
-:root {
+:root[data-thema="mitei"] {
     --color-primary: #1b718b;    /* メインカラー */
     --color-primary-dark: #155a6f;
     --color-accent: #ef9119;     /* アクセントカラー */
@@ -133,7 +133,7 @@
 }
 
 /* カラーパレット定義（十一月未定） */
-:root {
+:root[data-thema="mitei"] {
     --color-primary: #1b718b;    /* メインカラー */
     --color-primary-dark: #155a6f;
     --color-accent: #ef9119;     /* アクセントカラー */
@@ -281,7 +281,7 @@ body {
 footer {
     text-align: center;
     padding: 10px;
-    color: var(--color-bg-light);
+    color: var(--color-text-dark);
     position: fixed;
     bottom: 0;
     width: 100%;
