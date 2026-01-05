@@ -1,4 +1,4 @@
-/* ===== [過去のデータページアクション設定] (file.js) ===== */
+/* ===== 過去のデータページJS ===== */
 document.addEventListener('DOMContentLoaded', () => {
     const departments = document.querySelectorAll('.file-department');
     const loadingError = document.getElementById('loading-error');

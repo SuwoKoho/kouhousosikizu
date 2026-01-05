@@ -1,4 +1,4 @@
-// omikuji.js
+/* ===== おみくじページJS ===== */
 const drawBtn = document.getElementById("drawOmikuji");
 const resultBox = document.getElementById("omikujiResult");
 const backBtn = document.getElementById("backBtn");

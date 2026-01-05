@@ -2,22 +2,10 @@
   "top_page": {
     "subtitle": "広報活動とデザインを担うチーム"
   },
-  "carousel_images": [
-    "images/2025第58回定期演奏会.jpg",
-    "images/2025SUMMERCONCERT.jpg",
-    "images/2024第57回定期演奏会.jpg",
-    "images/2024SUMMERCONCERT.jpg",
-    "images/2023第56回定期演奏会.jpg",
-    "images/2023SUMMERCONCERT.jpg",
-    "images/2022第55回定期演奏会.jpg",
-    "images/2022SUMMERCONCERT.jpg",
-    "images/2021第54回定期演奏会.jpg",
-    "images/2021SUMMERCONCERT.jpg"
-  ],
   "organization": {
     "チラシ・ポスター部": {
       "top": "藤井 宰",
-      "members": ["河合 熙衛", "志水 悠吾", "橘 璃帆", "矢尾 優果"],
+      "members": ["河合 熙衛", "志水 悠吾", "橘 璃帆", "矢尾 優果", "高田 幸珠来"],
       "tasks": {
         "チラシ作成": {
           "description": "演奏会のチラシをデザイン・印刷します。デザイン調整や印刷部数の管理も担当します。",
@@ -39,7 +27,7 @@
     },
     "許可申請部": {
       "top": "川又 遥",
-      "members": ["市場 幹九郎", "安本 龍月"],
+      "members": ["市場 幹九郎", "安本 龍月", "大沼 夏香", "金原 竜希"],
       "tasks": {
         "事業報告、後援申請": {
           "description": "演奏会後の報告や、後援申請のための書類作成と提出を担当します。",
@@ -57,7 +45,7 @@
     },
     "広報部": {
       "top": "佐野 史弥",
-      "members": ["児玉 翔", "伊東 陽菜", "山田すずの"],
+      "members": ["児玉 翔", "伊東 陽菜", "山田すずの", "鈴木 天音", "千島 結衣"],
       "tasks": {
         "挟み込み、置きチラシ": {
           "description": "他団体演奏会へのチラシ挟み込み依頼や、各所への置きチラシを担当します。",

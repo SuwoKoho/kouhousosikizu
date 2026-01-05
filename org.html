@@ -1,19 +1,21 @@
+<!-- 組織図ページのHTML -->>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>静岡大学吹奏楽団 広報係 HP 組織図</title>
-  <link rel="stylesheet" href="common.css"> 
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="colors.css">
   <link rel="stylesheet" href="org.css">
   <script src="common.js" defer></script>
   <script src="org.js" defer></script>
 </head>
 
 <body>
+  <canvas id="particle-bg"></canvas>
   <div class="navbar"> 
-    <div class="navbar-left">
-      </div>
     <div class="menu-toggle" aria-label="メニューを開く/閉じる">
       <div></div><div></div><div></div>
     </div>
@@ -25,6 +27,12 @@
   </div>
   
   <main>
+    <div class="page-header-box">
+      <h1>《組織図》</h1>
+      <p class="org-intro">
+        広報係の組織図についてまとめたページです。
+      </p>
+    </div>
     <div class="org-chart">
       <div class="department" data-dept-name="チラシ・ポスター部">
       <h3>チラシ・ポスター部</h3>
@@ -47,50 +55,50 @@
         </div>
       </div>
 
-        <div class="department" data-dept-name="許可申請部">
-            <h3>許可申請部</h3>
-            <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
-            <div class="member-list-container" style="display: none;"></div>
-
-            <div class="tasks">
-                <div class="task" data-task-name="事業報告、後援申請" data-dept-name="許可申請部">
-                    <span class="title">事業報告、後援申請</span>
-                </div>
-                <div class="task" data-task-name="バンドジャーナル" data-dept-name="許可申請部">
-                    <span class="title">バンドジャーナル</span>
-                </div>
-                <div class="task" data-task-name="プレイガイド" data-dept-name="許可申請部">
-                    <span class="title">プレイガイド</span>
-                </div>
-            </div>
+      <div class="department" data-dept-name="許可申請部">
+      <h3>許可申請部</h3>
+        <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
+        <div class="member-list-container" style="display: none;">
         </div>
-
-        <div class="department" data-dept-name="広報部">
-            <h3>広報部</h3>
-            <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
-            <div class="member-list-container" style="display: none;"></div>
-
-            <div class="tasks">
-                <div class="task" data-task-name="挟み込み、置きチラシ" data-dept-name="広報部">
-                    <span class="title">挟み込み、置きチラシ</span>
-                </div>
-                <div class="task" data-task-name="広報活動日" data-dept-name="広報部">
-                    <span class="title">広報活動日</span>
-                </div>
-                <div class="task" data-task-name="広報アンサンブル" data-dept-name="広報部">
-                    <span class="title">広報アンサンブル</span>
-                </div>
-                <div class="task" data-task-name="駅チラシ" data-dept-name="広報部">
-                    <span class="title">駅チラシ</span>
-                </div>
-                <div class="task" data-task-name="構内ポスターツアー、構内チラシ配り" data-dept-name="広報部">
-                    <span class="title">構内ポスターツアー、構内チラシ配り</span>
-                </div>
-                <div class="task" data-task-name="案内状" data-dept-name="広報部">
-                    <span class="title">案内状</span>
-                </div>
-            </div>
+        <div class="tasks">
+          <div class="task" data-task-name="事業報告、後援申請" data-dept-name="許可申請部">
+            <span class="title">事業報告、後援申請</span>
+          </div>
+          <div class="task" data-task-name="バンドジャーナル" data-dept-name="許可申請部">
+            <span class="title">バンドジャーナル</span>
+          </div>
+          <div class="task" data-task-name="プレイガイド" data-dept-name="許可申請部">
+            <span class="title">プレイガイド</span>
+          </div>
         </div>
+      </div>
+
+      <div class="department" data-dept-name="広報部">
+      <h3>広報部</h3>
+        <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
+        <div class="member-list-container" style="display: none;">
+        </div>
+        <div class="tasks">
+          <div class="task" data-task-name="挟み込み、置きチラシ" data-dept-name="広報部">
+            <span class="title">挟み込み、置きチラシ</span>
+          </div>
+          <div class="task" data-task-name="広報活動日" data-dept-name="広報部">
+            <span class="title">広報活動日</span>
+          </div>
+          <div class="task" data-task-name="広報アンサンブル" data-dept-name="広報部">
+            <span class="title">広報アンサンブル</span>
+          </div>
+          <div class="task" data-task-name="駅チラシ" data-dept-name="広報部">
+            <span class="title">駅チラシ</span>
+          </div>
+          <div class="task" data-task-name="構内ポスターツアー、構内チラシ配り" data-dept-name="広報部">
+            <span class="title">構内ポスターツアー、構内チラシ配り</span>
+          </div>
+          <div class="task" data-task-name="案内状" data-dept-name="広報部">
+            <span class="title">案内状</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="modal" id="modal">
@@ -100,10 +108,11 @@
         </div>
     </div>
   </main>
-    <footer>
-        <div class="main-content">
-            <p>&copy; 2026 静岡大学吹奏楽団. All Rights Reserved.</p>
-        </div>
-    </footer>
+
+  <footer>
+    <div class="main-content">
+      <p>&copy; 2026 静岡大学吹奏楽団. All Rights Reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

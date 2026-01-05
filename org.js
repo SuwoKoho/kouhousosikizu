@@ -1,4 +1,4 @@
-/* ===== [組織図ページアクション設定] (org.js) ===== */
+/* ===== 組織図ページJS ===== */
 let globalOrgData = {};
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -94,28 +94,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) {
             modal.style.display = 'none';
         }
-    });
-
-    const toggleElements = document.querySelectorAll('.organization-chart .toggle');
-
-    toggleElements.forEach(function(element) {
-        element.addEventListener('click', function(event) {
-            let targetList = null;
-            let directUL = element.querySelector(':scope > ul');
-            if (directUL) targetList = directUL;
-            let subListUL = element.querySelector(':scope > .sub-list');
-            if (subListUL) targetList = subListUL;
-            if (targetList) {
-                if (targetList.style.display === 'block') {
-                    targetList.style.display = 'none';
-                    element.classList.remove('expanded');
-                } 
-                else {
-                    targetList.style.display = 'block';
-                    element.classList.add('expanded');
-                }
-            }
-            event.stopPropagation();
-        });
     });
 });

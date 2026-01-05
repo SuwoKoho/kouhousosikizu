@@ -1,2 +1,3 @@
+# 検索エンジン回避コード
 User-agent: *
 Disallow: /

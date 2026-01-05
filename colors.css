@@ -1,0 +1,157 @@
+/* ===== カラーパレット定義 ===== */
+
+/* メインカラー定義 */
+:root {
+    --color-primary: #d4f9f9; /* メインカラー */
+    --color-primary-dark: #c7e2e6; /* メインカラーの10%暗い色 */
+    --color-accent: #1e73be; /* アクセントカラー */
+    --color-accent-dark:#1b68ab; /* アクセントカラーの10%暗い色 */
+    --color-bg-light: #ffffff; /* 背景色 */
+    --color-text-light: #ffffff; /* メインテキスト白色 */
+    --color-text-dark: #333333; /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（お正月） */
+:root[data-thema="newyear"] {
+    --color-primary: #1b718b;
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* カラーパレット定義（バレンタインデー） */
+:root[data-thema="valentineday"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（ホワイトデー） */
+:root[data-thema="whiteday"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（エイプリルフール） */
+:roo[data-thema="aprilfool"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（こどもの日） */
+:root[data-thema="childrensday"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（６月未定） */
+:root[data-thma="mitei"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（七夕） */
+:root[data-thema="tanabata"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（８月未定） */
+:root[data-thema="mitei"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（お月見） */
+:root[data-thema="tsukimi"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（ハロウィン） */
+:root[data-thema="halloween"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（十一月未定） */
+:root[data-thema="mitei"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}
+
+/* カラーパレット定義（クリスマス） */
+:root[data-thema="christmas"] {
+    --color-primary: #1b718b;    /* メインカラー */
+    --color-primary-dark: #155a6f;
+    --color-accent: #ef9119;     /* アクセントカラー */
+    --color-accent-dark:#bf7414;
+    --color-bg-light: #f2ebea;   /* 背景の淡色 */
+    --color-text-light: #ffffff;  /* メインテキスト白色 */
+    --color-text-dark: #333333;  /* メインテキスト黒色 */
+    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+}

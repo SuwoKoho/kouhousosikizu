@@ -1,5 +1,6 @@
-/* ===== [過去のデータページスタイル設定] ===== */
+/* ===== 過去のデータページCSS ===== */
 
+/* メインコンテンツ */
 main {
     padding-top: 80px;
     padding-bottom: 150px;
@@ -8,25 +9,35 @@ main {
     flex-direction: column;
     align-items: center;
 }
-
 h1{
-    color: var(--color-bg-light);
+    color: var(--color-accent);
     margin-bottom: 10px;
 }
 
 /* ページ説明文 */
+.page-header-box {
+    border: 3px solid var(--color-accent);
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 30px;
+    color: var(--color-accent);
+    text-align: center;
+    background-color: var(--color-primary-dark);
+}
+.page-header-box h1 {
+    margin: 0 0 10px 0;
+}
+.page-header-box p {
+    margin: 0;
+}
 .file-intro {
     font-size: 1.1em;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--color-bg-light);
-    margin-bottom: 30px;
-    color: var(--color-bg-light);
 }
 
 /* 各部署ボックスの全体デザイン */
 .file-department {
     background: var(--color-bg-light);
-    padding: 20px;
+    padding: 20px 60px;
     border-radius: 16px;
     box-shadow: 0 6px 12px var(--color-text-dark);
     margin-bottom: 30px;
@@ -36,23 +47,23 @@ h1{
 /* 部署ボックスにマウスが乗ったときの効果 */
 .file-department:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px var(--color-shadow); 
+    box-shadow: 0 8px 16px var(--color-shadow);
 }
 
-/* ===== 部署名見出し ===== */
+/* 部署名見出し */
 .file-department h2 {
-    color: var(--color-primary); 
-    margin: 0 0 15px 0; 
-    font-size: 1.6em; 
-    padding-bottom: 10px; 
-    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-accent);
+    margin: 0 0 15px 0;
+    font-size: 1.6em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 /* リンクボタンのデザイン */
 .drive-link {
-    display: inline-block; 
-    background-color: var(--color-primary); 
-    color: var(--color-bg-light); 
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-bg-light);
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -62,13 +73,13 @@ h1{
 }
 /* リンクボタンにマウスが乗ったときの効果 */
 .drive-link:hover {
-    background-color: var(--color-primary-dark); 
-    transform: scale(1.05); 
+    background-color: var(--color-accent-dark);
+    transform: scale(1.05);
 }
 
 /* エラーメッセージ */
 #loading-error {
-    color: red; 
+    color: red;
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
