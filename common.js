@@ -76,10 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const events = [
-    { theme: "valentineday",  start: "2-14", end: "2-14" },
-    { theme: "whiteday",  start: "3-14", end: "3-14" },
+    { theme: "valentineday",  start: "2-12", end: "2-14" },
+    { theme: "hinamaturi",  start: "3-1", end: "3-3" },
     { theme: "aprilfool",    start: "4-1", end: "4-1" },
-    { theme: "childrensday",  start: "5-5", end: "5-5" },
+    { theme: "goldenweek",  start: "4-29", end: "5-5" },
     { theme: "mitei",  start: "6-1", end: "6-1" },
     { theme: "tanabata",    start: "7-7", end: "7-7" },
     { theme: "mitei",  start: "8-1", end: "8-1" },
