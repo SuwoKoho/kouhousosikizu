@@ -45,7 +45,7 @@
 }
 
 /* カラーパレット定義（エイプリルフール） */
-:roo[data-thema="aprilfool"] {
+:root[data-thema="aprilfool"] {
     --color-primary: #ffff99;
     --color-primary-dark: #7fffd4;
     --color-accent: #ff1493;
@@ -67,7 +67,7 @@
 }
 
 /* カラーパレット定義（６月） */
-:root[data-thma="mitei"] {
+:root[data-thema="mitei"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;
     --color-accent: #1e73be;

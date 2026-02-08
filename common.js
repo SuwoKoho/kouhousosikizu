@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const events = [
-    { theme: "valentineday",  start: "2-12", end: "2-14" },
-    { theme: "hinamaturi",  start: "3-1", end: "3-3" },
+    { theme: "valentineday",  start: "2-14", end: "2-14" },
+    { theme: "hinamaturi",  start: "3-3", end: "3-3" },
     { theme: "aprilfool",    start: "4-1", end: "4-1" },
     { theme: "goldenweek",  start: "4-29", end: "5-5" },
     { theme: "mitei",  start: "6-1", end: "6-1" },

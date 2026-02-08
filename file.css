@@ -37,7 +37,7 @@ h1{
 /* 各部署ボックスの全体デザイン */
 .file-department {
     background: var(--color-bg-light);
-    padding: 20px 60px;
+    padding: 30px;
     border-radius: 16px;
     box-shadow: 0 6px 12px var(--color-text-dark);
     margin-bottom: 30px;

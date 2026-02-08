@@ -37,7 +37,7 @@ h1{
 /* 大枠：部署全体 */
 .department {
     background: var(--color-bg-light);
-    padding: 20px;
+    padding: 30px;
     border-radius: 16px;
     box-shadow: 0 6px 12px var(--color-shadow);
     margin-bottom: 30px;
