@@ -12,7 +12,7 @@
 }
 
 /* カラーパレット定義（お正月） */
-:root[data-thema="newyear"] {
+:root[data-theme="newyear"] {
     --color-primary: #c20000;
     --color-primary-dark: #b00000;
     --color-accent: #d0a900;
@@ -23,7 +23,7 @@
 }
 
 /* カラーパレット定義（バレンタインデー） */
-:root[data-thema="valentineday"] {
+:root[data-theme="valentineday"] {
     --color-primary: #ed8fa0;
     --color-primary-dark: #d58190;
     --color-accent: #6d2619;
@@ -34,7 +34,7 @@
 }
 
 /* カラーパレット定義（ひな祭り） */
-:root[data-thema="hinamaturi"] {
+:root[data-theme="hinamaturi"] {
     --color-primary: #ff93aa;
     --color-primary-dark: #c0d033;
     --color-accent: #ffdd66;
@@ -45,7 +45,7 @@
 }
 
 /* カラーパレット定義（エイプリルフール） */
-:root[data-thema="aprilfool"] {
+:root[data-theme="aprilfool"] {
     --color-primary: #ffff99;
     --color-primary-dark: #7fffd4;
     --color-accent: #ff1493;
@@ -56,7 +56,7 @@
 }
 
 /* カラーパレット定義（５月） */
-:root[data-thema="goldenweek"] {
+:root[data-theme="goldenweek"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;
     --color-accent: #1e73be;
@@ -67,7 +67,7 @@
 }
 
 /* カラーパレット定義（６月） */
-:root[data-thema="mitei"] {
+:root[data-theme="mitei"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;
     --color-accent: #1e73be;
@@ -78,7 +78,7 @@
 }
 
 /* カラーパレット定義（七夕） */
-:root[data-thema="tanabata"] {
+:root[data-theme="tanabata"] {
     --color-primary: #0066cc;
     --color-primary-dark: #005cb8;
     --color-accent: #8fbc8f;
@@ -89,7 +89,7 @@
 }
 
 /* カラーパレット定義（８月） */
-:root[data-thema="mitei"] {
+:root[data-theme="mitei"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;
     --color-accent: #1e73be;
@@ -100,7 +100,7 @@
 }
 
 /* カラーパレット定義（９月） */
-:root[data-thema="tsukimi"] {
+:root[data-theme="tsukimi"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;
     --color-accent: #1e73be;
@@ -111,7 +111,7 @@
 }
 
 /* カラーパレット定義（ハロウィン） */
-:root[data-thema="halloween"] {
+:root[data-theme="halloween"] {
     --color-primary: #ff6600;
     --color-primary-dark: #663a66;
     --color-accent: #ffbb00;
@@ -122,7 +122,7 @@
 }
 
 /* カラーパレット定義（十一月未定） */
-:root[data-thema="mitei"] {
+:root[data-theme="mitei"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;
     --color-accent: #1e73be;
@@ -133,7 +133,7 @@
 }
 
 /* カラーパレット定義（クリスマス） */
-:root[data-thema="christmas"] {
+:root[data-theme="christmas"] {
     --color-primary: #cc0000;
     --color-primary-dark: #006622;
     --color-accent: #c99c33;
