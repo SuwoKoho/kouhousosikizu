@@ -18,7 +18,6 @@ const navLinks = document.querySelector('.nav-links');
 
     /* 背景パーティクルアニメーション */
     const canvas = document.getElementById('particle-bg');
-    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let particles = [];
     const num = 80;
