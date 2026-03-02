@@ -55,7 +55,18 @@
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* カラーパレット定義（５月） */
+/* カラーパレット定義（昭和の日） */
+:root[data-theme="shouwanohi"] {
+    --color-primary: #F3EBDD;
+    --color-primary-dark: #D6C3A3;
+    --color-accent: #9B7E4C;
+    --color-accent-dark:#4A3A23;
+    --color-bg-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* カラーパレット定義（こどもの日） */
 :root[data-theme="goldenweek"] {
     --color-primary: #d4f9f9;
     --color-primary-dark: #c7e2e6;

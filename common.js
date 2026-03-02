@@ -59,7 +59,7 @@ const navLinks = document.querySelector('.nav-links');
 /* イベントカラー変更 */
 document.addEventListener("DOMContentLoaded", () => {
 
-  const today = new Date();
+  const today = new Date(2026,1,14);
   const y = today.getFullYear();
 
   const makeDate = (mmdd, nextYear = false) => {
@@ -78,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { theme: "valentineday",  start: "2-14", end: "2-14" },
     { theme: "hinamaturi",  start: "3-3", end: "3-3" },
     { theme: "aprilfool",    start: "4-1", end: "4-1" },
+    { theme: "shouwanohi",    start: "4-29", end: "4-29" },
     { theme: "goldenweek",  start: "4-29", end: "5-5" },
     { theme: "mitei",  start: "6-1", end: "6-1" },
     { theme: "tanabata",    start: "7-7", end: "7-7" },
