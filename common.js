@@ -59,7 +59,7 @@ const navLinks = document.querySelector('.nav-links');
 /* イベントカラー変更 */
 document.addEventListener("DOMContentLoaded", () => {
 
-  const today = new Date(2026,1,14);
+  const today = new Date();
   const y = today.getFullYear();
 
   const makeDate = (mmdd, nextYear = false) => {
