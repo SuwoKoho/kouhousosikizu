@@ -71,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const inRange = (start, end) => {
     let s = makeDate(start);
     let e = makeDate(end);
+    s.setHours(0,0,0,0);
+    e.setHours(23,59,59,999);
     if (e < s) e = makeDate(end, true);
     return today >= s && today <= e;
   };
