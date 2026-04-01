@@ -60,6 +60,7 @@ const navLinks = document.querySelector('.nav-links');
 document.addEventListener("DOMContentLoaded", () => {
 
   const today = new Date();
+  today.setHours(0,0,0,0);
   const y = today.getFullYear();
 
   const makeDate = (mmdd, nextYear = false) => {
