@@ -59,7 +59,7 @@ const navLinks = document.querySelector('.nav-links');
 /* イベントカラー変更 */
 document.addEventListener("DOMContentLoaded", () => {
 
-  const today = new Date("");
+  const today = new Date("");/*Date("2020-01-01");のように日付を入力すると変更が確認可能 */
   today.setHours(0,0,0,0);
   const y = today.getFullYear();
 
@@ -104,14 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   for (const ev of events) {
-    // ① 普通の日付指定（start と end がある場合）
     if (ev.start && ev.end) {
       if (inRange(ev.start, ev.end)) {
         document.documentElement.setAttribute("data-theme", ev.theme);
         return;
       }
     } 
-    // ② 曜日での指定（month, nth, dayOfWeek がある場合）
     else if (ev.month && ev.nth && ev.dayOfWeek !== undefined) {
       if (isNthDayOfWeek(ev.month, ev.nth, ev.dayOfWeek)) {
         document.documentElement.setAttribute("data-theme", ev.theme);
