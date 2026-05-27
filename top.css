@@ -34,72 +34,59 @@ main {
                  0 0 15px var(--color-shadow);
 }
 
-/* イベントイメージ（右下） */
-#event-visual-1,
-#event-visual-2 {
+/* イベントイメージ */
+#event-visual {
   position: fixed;
-  right: 20px;
-  bottom: 80px;
-  width: 160px;
-  height: 160px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.5;
+  opacity: 0.6;
   pointer-events: none;
-  z-index: 20;
+  z-index: 1;
   filter: drop-shadow(0 0 8px var(--color-accent));
 }
 
-#event-visual-1 {
-    right: 20px;
-    top: 100px;
-}
-#event-visual-2 {
-    left: 20px;
-    bottom: 100px;
+.top-title, .sub-title, main {
+  position: relative;
+  z-index: 10;
 }
 
-:root[data-theme="valentineday"] #event-visual-1 {
-  background-image: url("images/valentine-1.png");
+:root[data-theme="setubun"] #event-visual {
+  background-image: url("images/setubun.png");
 }
-:root[data-theme="valentineday"] #event-visual-2 {
-  background-image: url("images/valentine-2.png");
-}
-
-:root[data-theme="hinamaturi"] #event-visual {
-  background-image: url("images/hinamaturi-1.png");
+:root[data-theme="valentine"] #event-visual {
+  background-image: url("images/valentine.png");
 }
 :root[data-theme="hinamaturi"] #event-visual {
-  background-image: url("images/hinamaturi-2.png");
+  background-image: url("images/hinamaturi.png");
 }
-
-:root[data-theme="shouwanohi"] #event-visual {
-  background-image: url("images/shouwanohi-1.png");
-}
-:root[data-theme="hinamaturi"] #event-visual {
-  background-image: url("images/shouwanohi-2.png");
-}
-
-:root[data-theme="tanabata"] #event-visual {
-  background-image: url("images/tanabata-1.png");
+:root[data-theme="whiteday"] #event-visual {
+  background-image: url("images/whiteday.png");
 }
 :root[data-theme="tanabata"] #event-visual {
-  background-image: url("images/tanabata-2.png");
+  background-image: url("images/tanabata.png");
 }
-
+:root[data-theme="uminohi"] #event-visual {
+  background-image: url("images/uminohi.png");
+}
+:root[data-theme="yamanohi"] #event-visual {
+  background-image: url("images/yamanohi.png");
+}
+:root[data-theme="shuubun"] #event-visual {
+  background-image: url("images/shuubun.png");
+}
 :root[data-theme="halloween"] #event-visual {
-  background-image: url("images/halloween-1.png");
-}
-:root[data-theme="halloween"] #event-visual {
-  background-image: url("images/halloween-2.png");
-}
-
-:root[data-theme="christmas"] #event-visual {
-  background-image: url("images/christmas-1.png");
+  background-image: url("images/halloween.png");
 }
 :root[data-theme="christmas"] #event-visual {
-  background-image: url("images/christmas-2.png");
+  background-image: url("images/christmas.png");
+}
+:root[data-theme="newyear"] #event-visual {
+  background-image: url("images/newyear.png");
 }
 
 #event-visual {

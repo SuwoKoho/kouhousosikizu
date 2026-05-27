@@ -59,7 +59,7 @@ const navLinks = document.querySelector('.nav-links');
 /* イベントカラー変更 */
 document.addEventListener("DOMContentLoaded", () => {
 
-  const today = new Date();
+  const today = new Date("2026-12-24");
   today.setHours(0,0,0,0);
   const y = today.getFullYear();
 
@@ -77,26 +77,46 @@ document.addEventListener("DOMContentLoaded", () => {
     return today >= s && today <= e;
   };
 
+  const isNthDayOfWeek = (month, nth, dayOfWeek) => {
+    const currentMonth = today.getMonth() + 1;
+    const currentDate = today.getDate();
+    const currentDay = today.getDay();
+    if (currentMonth !== month || currentDay !== dayOfWeek) {
+      return false;
+    }
+    const currentNth = Math.ceil(currentDate / 7);
+    return currentNth === nth;
+  };
+
   const events = [
-    { theme: "valentineday",  start: "2-14", end: "2-14" },
-    { theme: "hinamaturi",  start: "3-3", end: "3-3" },
-    { theme: "aprilfool",    start: "4-1", end: "4-1" },
-    { theme: "shouwanohi",    start: "4-29", end: "4-29" },
-    { theme: "goldenweek",  start: "4-29", end: "5-5" },
-    { theme: "mitei",  start: "6-1", end: "6-1" },
-    { theme: "tanabata",    start: "7-7", end: "7-7" },
-    { theme: "mitei",  start: "8-1", end: "8-1" },
-    { theme: "tsukimi",  start: "9-1", end: "9-1" },
-    { theme: "mitei",    start: "10-1", end: "10-1" },
+    { theme: "newyear",  start: "01-01", end: "01-03" },
+    { theme: "setubun",  start: "02-03", end: "02-03" },
+    { theme: "valentine",  start: "02-14", end: "02-14" },
+    { theme: "hinamaturi",  start: "03-03", end: "03-03" },
+    { theme: "whiteday",  start: "03-14", end: "03-14" },
+    { theme: "tanabata",  start: "07-07", end: "07-07" },
+    { theme: "uminohi",  month: 7,  nth: 3, dayOfWeek: 1 },
+    { theme: "yamanohi",  start: "08-11", end: "08-11" },
+    { theme: "shuubun",  start: "09-23", end: "09-23" },
     { theme: "halloween",  start: "10-31", end: "10-31" },
     { theme: "christmas",  start: "12-24", end: "12-25" },
-    { theme: "newyear",    start: "12-31", end: "01-03" },
+    { theme: "newyear",  start: "12-31", end: "12-31" },
   ];
 
   for (const ev of events) {
-    if (inRange(ev.start, ev.end)) {
-      document.documentElement.setAttribute("data-theme", ev.theme);
-      return;
+    // ① 普通の日付指定（start と end がある場合）
+    if (ev.start && ev.end) {
+      if (inRange(ev.start, ev.end)) {
+        document.documentElement.setAttribute("data-theme", ev.theme);
+        return;
+      }
+    } 
+    // ② 曜日での指定（month, nth, dayOfWeek がある場合）
+    else if (ev.month && ev.nth && ev.dayOfWeek !== undefined) {
+      if (isNthDayOfWeek(ev.month, ev.nth, ev.dayOfWeek)) {
+        document.documentElement.setAttribute("data-theme", ev.theme);
+        return;
+      }
     }
   }
 

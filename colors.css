@@ -11,19 +11,19 @@
     --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
 }
 
-/* カラーパレット定義（お正月） */
-:root[data-theme="newyear"] {
-    --color-primary: #c20000;
-    --color-primary-dark: #b00000;
-    --color-accent: #d0a900;
-    --color-accent-dark:#bb9800;
+/* カラーパレット定義（節分） */
+:root[data-theme="setubun"] {
+    --color-primary: #f3cc99;
+    --color-primary-dark: #f3c00d;
+    --color-accent: #ce0d0d;
+    --color-accent-dark:#b20b0b;
     --color-bg-light: #ffffff;
     --color-text-dark: #333333;
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
 /* カラーパレット定義（バレンタインデー） */
-:root[data-theme="valentineday"] {
+:root[data-theme="valentine"] {
     --color-primary: #ed8fa0;
     --color-primary-dark: #d58190;
     --color-accent: #6d2619;
@@ -44,45 +44,12 @@
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* カラーパレット定義（エイプリルフール） */
-:root[data-theme="aprilfool"] {
-    --color-primary: #ffff99;
-    --color-primary-dark: #7fffd4;
-    --color-accent: #ff1493;
-    --color-accent-dark:#32cd32;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
-}
-
-/* カラーパレット定義（昭和の日） */
-:root[data-theme="shouwanohi"] {
-    --color-primary: #F3EBDD;
-    --color-primary-dark: #D6C3A3;
-    --color-accent: #9B7E4C;
-    --color-accent-dark:#4A3A23;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
-}
-
-/* カラーパレット定義（こどもの日） */
-:root[data-theme="goldenweek"] {
-    --color-primary: #d4f9f9;
-    --color-primary-dark: #c7e2e6;
-    --color-accent: #1e73be;
-    --color-accent-dark:#1b68ab;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
-}
-
-/* カラーパレット定義（６月） */
-:root[data-theme="mitei"] {
-    --color-primary: #d4f9f9;
-    --color-primary-dark: #c7e2e6;
-    --color-accent: #1e73be;
-    --color-accent-dark:#1b68ab;
+/* カラーパレット定義（ホワイトデー） */
+:root[data-theme="whiteday"] {
+    --color-primary: #e4dace;
+    --color-primary-dark: #498eaf;
+    --color-accent: #e5bb4b;
+    --color-accent-dark:#ceaa43;
     --color-bg-light: #ffffff;
     --color-text-dark: #333333;
     --color-shadow: rgba(0, 0, 0, 0.3);
@@ -99,23 +66,34 @@
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* カラーパレット定義（８月） */
-:root[data-theme="mitei"] {
-    --color-primary: #d4f9f9;
-    --color-primary-dark: #c7e2e6;
-    --color-accent: #1e73be;
-    --color-accent-dark:#1b68ab;
+/* カラーパレット定義（海の日） */
+:root[data-theme="uminohi"] {
+    --color-primary: #91c5f2;
+    --color-primary-dark: #4b94f2;
+    --color-accent: #3973bf;
+    --color-accent-dark:#162d73;
     --color-bg-light: #ffffff;
     --color-text-dark: #333333;
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* カラーパレット定義（９月） */
-:root[data-theme="tsukimi"] {
-    --color-primary: #d4f9f9;
-    --color-primary-dark: #c7e2e6;
-    --color-accent: #1e73be;
-    --color-accent-dark:#1b68ab;
+/* カラーパレット定義（山の日） */
+:root[data-theme="yamanohi"] {
+    --color-primary: #a5d4ad;
+    --color-primary-dark: #8fb896;
+    --color-accent: #779438;
+    --color-accent-dark:#b7aa00;
+    --color-bg-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* カラーパレット定義（秋分の日） */
+:root[data-theme="shuubun"] {
+    --color-primary: #f8f8ff;
+    --color-primary-dark: #e6e6fa;
+    --color-accent: #2c2f54;
+    --color-accent-dark:#ffd700;
     --color-bg-light: #ffffff;
     --color-text-dark: #333333;
     --color-shadow: rgba(0, 0, 0, 0.3);
@@ -132,23 +110,23 @@
     --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
-/* カラーパレット定義（十一月未定） */
-:root[data-theme="mitei"] {
-    --color-primary: #d4f9f9;
-    --color-primary-dark: #c7e2e6;
-    --color-accent: #1e73be;
-    --color-accent-dark:#1b68ab;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
-}
-
 /* カラーパレット定義（クリスマス） */
 :root[data-theme="christmas"] {
     --color-primary: #cc0000;
     --color-primary-dark: #006622;
     --color-accent: #c99c33;
     --color-accent-dark:#662200;
+    --color-bg-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* カラーパレット定義（お正月） */
+:root[data-theme="newyear"] {
+    --color-primary: #c20000;
+    --color-primary-dark: #b00000;
+    --color-accent: #d0a900;
+    --color-accent-dark:#bb9800;
     --color-bg-light: #ffffff;
     --color-text-dark: #333333;
     --color-shadow: rgba(0, 0, 0, 0.3);

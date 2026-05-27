@@ -121,5 +121,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 100;
     background-color: var(--color-primary-dark);
 }
