@@ -59,7 +59,7 @@ const navLinks = document.querySelector('.nav-links');
 /* イベントカラー変更 */
 document.addEventListener("DOMContentLoaded", () => {
 
-  const today = new Date("");/*Date("2020-01-01");のように日付を入力すると変更が確認可能 */
+  const today = new Date();/*Date("2020-01-01");のように日付を入力すると変更が確認可能 */
   today.setHours(0,0,0,0);
   const y = today.getFullYear();
 
