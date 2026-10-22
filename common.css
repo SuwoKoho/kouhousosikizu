@@ -1,92 +1,98 @@
 /* ===== 共通スタイルCSS ===== */
-
-/* 全ての要素にborder-boxを適用、幅ずれを防ぐ */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap');
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* HTMLとBODYの基本設定 */
-html, body {
+html {
     height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
 }
 
-/* ページ全体の設定 */
 body {
-    font-family: "Noto Sans JP", sans-serif;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
     background-color: var(--color-primary);
     color: var(--color-text-dark);
     overflow-x: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.5s ease;
 }
 
 /* パーティクル背景 */
 #particle-bg {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    inset: 0;
     pointer-events: none;
+    z-index: 0;
 }
 
 /* ヘッダー（ナビゲーションバー） */
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 70px;
     background-color: var(--color-primary-dark);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 0 30px;
-    z-index: 100;
-    justify-content: flex-end;
+    z-index: 1000;
     gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(8px);
 }
 
-/* ハンバーガーメニュー */
 .menu-toggle {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    gap: 5px;
+    gap: 6px;
     cursor: pointer;
     position: relative;
 }
 
-/* ハンバーガーメニューの線 */
 .menu-toggle div {
     display: block;
-    width: 30px;
-    height: 5px;
-    background-color: var(--color-bg-light);
-    margin: 0;
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 3px;
     transition: all 0.3s ease;
 }
 
-/* メニュー本体 */
 .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     transition: all 0.3s ease;
 }
+
 .nav-links a {
     color: var(--color-text-dark);
     text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.nav-links a:hover {
-    text-shadow: 0 0 10px var(--color-bg-light);
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
 }
 
-/* スマホ用　*/
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/* スマホ用メニュー */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -95,32 +101,33 @@ body {
         display: none;
         position: absolute;
         top: 70px;
-        right: 5px;
+        right: 15px;
         flex-direction: column;
         background-color: var(--color-primary-dark);
-        width: 180px;
-        padding: 10px;
-        border-radius: 10px 10px 10px 10px;
-        box-shadow: 0 5px 15px var(--color-text-dark);
+        width: 200px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
     .nav-links.open {
         display: flex;
         animation: fadeIn 0.3s ease;
     }
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 }
 
 /* フッター */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 18px;
     color: var(--color-text-dark);
-    position: fixed;
-    bottom: 0;
     width: 100%;
     z-index: 100;
     background-color: var(--color-primary-dark);
+    margin-top: auto;
+    font-size: 0.9rem;
+    font-weight: 600;
 }
