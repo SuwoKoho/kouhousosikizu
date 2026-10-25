@@ -119,6 +119,39 @@ body {
     }
 }
 
+/* =====================================
+   全ページ共通 ページヘッダーボックス
+===================================== */
+.page-header-box {
+    border: 3px solid var(--color-accent);
+    border-radius: 18px;
+    padding: 24px 30px;
+    margin: 0 auto 35px auto;
+    text-align: center;
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+
+/* 見出し：スケジュールと同じ黒文字に統一 */
+.page-header-box h1 {
+    margin: 0 0 10px 0;
+    font-size: clamp(1.8rem, 4vw, 2.4rem); /* 画面幅に応じた綺麗なサイズ統一 */
+    color: var(--color-text-dark);          /* 黒文字 */
+    font-weight: bold;
+}
+
+/* 説明文：サイズと読みやすさを統一 */
+.page-header-box p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
 /* フッター */
 footer {
     text-align: center;

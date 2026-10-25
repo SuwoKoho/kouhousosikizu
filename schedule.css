@@ -1,0 +1,239 @@
+/* ===== リスト × 部署フィルター型 スケジュールCSS ===== */
+
+.schedule-main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  flex: 1;
+  padding: 110px 24px 50px;
+}
+
+.schedule-heading {
+  text-align: center;
+  margin: 0 auto 32px;
+}
+
+.schedule-heading h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--color-text-dark);
+}
+
+.schedule-heading p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.schedule-section {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#event-selector-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+#event-select {
+  padding: 10px 14px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+#event-summary {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+}
+
+/* 部署フィルターボタン群 */
+.filter-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: #444;
+}
+
+.filter-btn.active {
+  background-color: var(--dept-color, #333);
+  color: #fff;
+  border-color: var(--dept-color, #333);
+}
+
+.filter-btn.active:not([style*="--dept-color"]) {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* リスト領域 */
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 今日の境界線 */
+.today-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0;
+  position: relative;
+}
+
+.today-divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 2px;
+  background-color: #ff4757;
+  z-index: 1;
+}
+
+.today-divider span {
+  position: relative;
+  z-index: 2;
+  background-color: #ff4757;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 4px 14px;
+  border-radius: 12px;
+}
+
+/* タスクカード */
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background-color: #fff;
+  border-radius: 12px;
+  border-left: 6px solid var(--dept-color, #333);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.15s ease;
+}
+
+.task-card:hover {
+  transform: translateX(4px);
+}
+
+.task-card.past {
+  opacity: 0.55;
+  background-color: #f9f9f9;
+}
+
+.task-card.today-due {
+  background-color: #fff9fa;
+  border-color: #ff4757;
+}
+
+.task-date-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 110px;
+}
+
+.task-date {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.task-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.badge-future {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.badge-today {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.badge-past {
+  background-color: #eee;
+  color: #777;
+}
+
+.task-content-box {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.task-dept-tag {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--dept-color, #666);
+}
+
+.task-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--color-text-dark);
+}
+
+.empty-msg {
+  text-align: center;
+  padding: 30px 0;
+  color: #777;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .task-content-box {
+    text-align: left;
+    align-items: flex-start;
+  }
+}

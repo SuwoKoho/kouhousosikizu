@@ -8,28 +8,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 90%;
 }
 h1{
     color: var(--color-accent);
     margin-bottom: 10px;
 }
 
-/* ページ説明文 */
-.page-header-box {
-    border: 3px solid var(--color-accent);
-    border-radius: 18px;
-    padding: 18px 20px;
-    margin-bottom: 30px;
-    color: var(--color-accent);
-    text-align: center;
-    background-color: var(--color-primary-dark);
-}
-.page-header-box h1 {
-    margin: 0 0 10px 0;
-}
-.page-header-box p {
-    margin: 0;
-}
 .file-intro {
     font-size: 1.1em;
 }

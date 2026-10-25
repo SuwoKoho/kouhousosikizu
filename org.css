@@ -11,22 +11,6 @@ main {
     width: 90%;
 }
 
-/* ページヘッダー */
-.page-header-box {
-    border: 2px solid var(--color-accent);
-    border-radius: 20px;
-    padding: 24px 30px;
-    margin-bottom: 35px;
-    color: var(--color-accent);
-    text-align: center;
-    background-color: var(--color-primary-dark);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-    width: 100%;
-}
-.page-header-box h1 {
-    margin: 0 0 10px 0;
-    font-size: 1.8rem;
-}
 .org-intro {
     font-size: 1rem;
     margin: 0;

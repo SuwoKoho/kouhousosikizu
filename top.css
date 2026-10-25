@@ -90,3 +90,188 @@ main {
     opacity: 1;
     transform: scale(1.3) rotate(10deg);
 }
+
+#secretNote:focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 4px;
+}
+
+/* ========================================
+   トップページ：音符の会話機能
+======================================== */
+
+/* 音符の吹き出し */
+.note-dialog {
+    position: fixed;
+    z-index: 10003;
+
+    box-sizing: border-box;
+    width: max-content;
+    max-width: min(300px, calc(100vw - 32px));
+
+    padding: 14px 18px;
+
+    background: #000000;
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+/* 吹き出しを表示 */
+.note-dialog.is-visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+/* 吹き出しの三角形 */
+.note-dialog::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -8px;
+    left: 260px;
+
+    width: 12px;
+    height: 12px;
+
+    background: #000000;
+
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    transform: rotate(45deg);
+}
+
+/* 吹き出しの文章 */
+.note-dialog-text {
+    margin: 0;
+
+    white-space: pre-wrap;
+}
+
+
+/* ========================================
+   トップページ：掃除モード
+======================================== */
+
+/* 掃除モードの画面 */
+.cleaning-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    padding: 24px;
+
+    background: rgba(15, 15, 25, 0.96);
+    color: #ffffff;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+/* 掃除モード開始 */
+.cleaning-overlay.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* メッセージ全体 */
+.cleaning-message {
+    width: 100%;
+    max-width: 480px;
+
+    line-height: 2;
+}
+
+/* 見出し */
+.cleaning-message h2 {
+    margin-bottom: 20px;
+
+    font-size: clamp(22px, 5vw, 32px);
+}
+
+/* 説明文 */
+.cleaning-message p {
+    font-size: 15px;
+}
+
+/* 元に戻すボタン */
+.cleaning-restore-button {
+    display: inline-block;
+
+    margin-top: 24px;
+    padding: 12px 24px;
+
+    border: 1px solid #ffffff;
+    border-radius: 24px;
+
+    background: #ffffff;
+    color: #222222;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease, 
+        color 0.2s ease;
+}
+
+/* ボタンにマウスを乗せたとき */
+.cleaning-restore-button:hover {
+    background: transparent;
+    color: #ffffff;
+}
+
+/* キーボード操作時のフォーカス */
+.cleaning-restore-button:focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 4px;
+}
+
+
+/* ========================================
+   動きを控えめにする設定への対応
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .note-dialog,
+    .cleaning-overlay,
+    .cleaning-restore-button {
+        transition: none;
+    }
+}
