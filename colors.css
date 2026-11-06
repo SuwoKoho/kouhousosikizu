@@ -2,10 +2,10 @@
 
 /* メインカラー定義 */
 :root {
-    --color-primary: #d4f9f9; /* メインカラー */
-    --color-primary-dark: #c7e2e6; /* メインカラーの10%暗い色 */
-    --color-accent: #1e73be; /* アクセントカラー */
-    --color-accent-dark:#1b68ab; /* アクセントカラーの10%暗い色 */
+    --color-primary: #c0cfe4; /* メインカラー */
+    --color-primary-dark: #97afd2;
+    --color-accent: #2e5fa5; /* アクセントカラー */
+    --color-accent-dark:#244b82;
     --color-bg-light: #ffffff; /* 背景色 */
     --color-text-dark: #333333; /* メインテキスト黒色 */
     --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */

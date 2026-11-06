@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 let modalHtml = `<h3>${title}</h3><p>${description}</p>`;
                 modalHtml += `<a href="${pdfLink}" target="_blank" class="pdf-button">詳細PDFを見る</a>`;
                 modalText.innerHTML = modalHtml;
-                modal.style.display = 'block';
+                modal.style.display = 'flex';
             } 
             else {
                 modalText.innerHTML = `<h3>情報が見つかりません</h3><p>このタスクの情報は現在準備中です。</p>`;
-                modal.style.display = 'block';
+                modal.style.display = 'flex';
             }
         });
     });
