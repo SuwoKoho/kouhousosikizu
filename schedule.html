@@ -5,46 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
   <link rel="apple-touch-icon" href="icon.png">
-
   <title>静岡大学吹奏楽団 広報係 HP スケジュール</title>
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap">
 
   <!-- 共通デザイン -->
   <link rel="stylesheet" href="colors.css">
   <link rel="stylesheet" href="common.css">
 
-  <!-- スケジュール専用デザイン -->
+  <!-- スケジュールページ専用 -->
   <link rel="stylesheet" href="schedule.css">
 
-  <!-- JavaScript -->
   <script src="common.js" defer></script>
   <script src="schedule.js" defer></script>
 </head>
 
 <body>
-  <!-- 共通背景 -->
-  <canvas id="particle-bg"></canvas>
-
-  <!-- 共通ナビゲーションバー -->
-  <div class="navbar">
-    <div class="menu-toggle" aria-label="メニューを開く/閉じる">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-
-    <div class="nav-links">
-      <a href="index.html">トップページ</a>
-      <a href="org.html">組織図</a>
-      <a href="file.html">資料・データ</a>
-      <a href="schedule.html">スケジュール</a>
-    </div>
-  </div>
-
-  <!-- スケジュール本体 -->
-  <main class="schedule-main">
+  <!-- ナビ・フッター・背景パーティクルは common.js が差し込みます -->
+  <main class="page-main">
     <div class="page-header-box">
       <h1>スケジュール</h1>
-      <p>仕事スケジュールについてまとめたページです</p>
+      <p>仕事スケジュールについてまとめたページです。</p>
     </div>
 
     <section class="schedule-section">
@@ -56,20 +40,10 @@
       </div>
 
       <div id="event-summary"></div>
-
-      <div id="schedule-legend" class="schedule-legend"></div>
-
+      <div id="department-filter"></div>
       <div id="schedule-status" role="status"></div>
-
-      <div id="schedule-container" class="schedule-container">
-        <div id="schedule-canvas" class="schedule-canvas"></div>
-      </div>
+      <div id="task-list"></div>
     </section>
   </main>
-
-  <!-- 共通フッター -->
-  <footer>
-    <p>&copy; 2026 静岡大学吹奏楽団. All Rights Reserved.</p>
-  </footer>
 </body>
 </html>

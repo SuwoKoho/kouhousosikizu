@@ -1,133 +1,121 @@
-/* ===== カラーパレット定義 ===== */
+/* ===== カラーパレット定義 =====
+   ・:root が通常時の色です。
+   ・イベント日（data-theme）は、変えたい色だけを上書きします（書かなかった色は通常時のまま）。
+   ・イベント名（setubun など）は common.js の EVENTS、top.js のセリフと同じ綴りにしてください。 */
 
-/* メインカラー定義 */
 :root {
-    --color-primary: #c0cfe4; /* メインカラー */
-    --color-primary-dark: #97afd2;
-    --color-accent: #2e5fa5; /* アクセントカラー */
-    --color-accent-dark:#244b82;
-    --color-bg-light: #ffffff; /* 背景色 */
-    --color-text-dark: #333333; /* メインテキスト黒色 */
-    --color-shadow: rgba(0, 0, 0, 0.3); /* 影用 */
+  --color-primary: #c0cfe4;       /* メインカラー（ページの背景） */
+  --color-primary-dark: #97afd2;  /* ナビ・フッター・見出しボックスの背景 */
+  --color-accent: #2e5fa5;        /* アクセントカラー */
+  --color-accent-dark: #244b82;   /* アクセントのホバー色 */
+  --color-white: #ffffff;
+  --color-text-dark: #333333;     /* 基本の文字色 */
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-on-dark: var(--color-text-dark);      /* primary-dark の上に置く文字色 */
+  --color-hover: rgba(255, 255, 255, 0.4);      /* ナビのホバー背景 */
+  --color-title: var(--color-white);            /* トップページの大見出しの色 */
 }
 
-/* カラーパレット定義（節分） */
+/* 節分 */
 :root[data-theme="setubun"] {
-    --color-primary: #f3cc99;
-    --color-primary-dark: #f3c00d;
-    --color-accent: #ce0d0d;
-    --color-accent-dark:#b20b0b;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #f3cc99;
+  --color-primary-dark: #f3c00d;
+  --color-accent: #ce0d0d;
+  --color-accent-dark: #b20b0b;
 }
 
-/* カラーパレット定義（バレンタインデー） */
+/* バレンタインデー */
 :root[data-theme="valentine"] {
-    --color-primary: #ed8fa0;
-    --color-primary-dark: #d58190;
-    --color-accent: #6d2619;
-    --color-accent-dark:#622217;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #ed8fa0;
+  --color-primary-dark: #d58190;
+  --color-accent: #6d2619;
+  --color-accent-dark: #622217;
 }
 
-/* カラーパレット定義（ひな祭り） */
+/* ひな祭り */
 :root[data-theme="hinamaturi"] {
-    --color-primary: #ff93aa;
-    --color-primary-dark: #c0d033;
-    --color-accent: #ffdd66;
-    --color-accent-dark:#ff6076;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #ff93aa;
+  --color-primary-dark: #c0d033;
+  --color-accent: #ffdd66;
+  --color-accent-dark: #ff6076;
 }
 
-/* カラーパレット定義（ホワイトデー） */
+/* ホワイトデー */
 :root[data-theme="whiteday"] {
-    --color-primary: #e4dace;
-    --color-primary-dark: #498eaf;
-    --color-accent: #e5bb4b;
-    --color-accent-dark:#ceaa43;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #e4dace;
+  --color-primary-dark: #498eaf;
+  --color-accent: #e5bb4b;
+  --color-accent-dark: #ceaa43;
 }
 
-/* カラーパレット定義（七夕） */
+/* 七夕 */
 :root[data-theme="tanabata"] {
-    --color-primary: #0066cc;
-    --color-primary-dark: #005cb8;
-    --color-accent: #8fbc8f;
-    --color-accent-dark:#81a981;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #0066cc;
+  --color-primary-dark: #005cb8;
+  --color-accent: #8fbc8f;
+  --color-accent-dark: #81a981;
 }
 
-/* カラーパレット定義（海の日） */
+/* 海の日 */
 :root[data-theme="uminohi"] {
-    --color-primary: #91c5f2;
-    --color-primary-dark: #4b94f2;
-    --color-accent: #3973bf;
-    --color-accent-dark:#162d73;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #91c5f2;
+  --color-primary-dark: #4b94f2;
+  --color-accent: #3973bf;
+  --color-accent-dark: #162d73;
 }
 
-/* カラーパレット定義（山の日） */
+/* 山の日 */
 :root[data-theme="yamanohi"] {
-    --color-primary: #a5d4ad;
-    --color-primary-dark: #8fb896;
-    --color-accent: #779438;
-    --color-accent-dark:#b7aa00;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #a5d4ad;
+  --color-primary-dark: #8fb896;
+  --color-accent: #779438;
+  --color-accent-dark: #b7aa00;
 }
 
-/* カラーパレット定義（秋分の日） */
+/* 秋分の日 */
 :root[data-theme="shuubun"] {
-    --color-primary: #f8f8ff;
-    --color-primary-dark: #e6e6fa;
-    --color-accent: #2c2f54;
-    --color-accent-dark:#ffd700;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #f8f8ff;
+  --color-primary-dark: #e6e6fa;
+  --color-accent: #2c2f54;
+  --color-accent-dark: #ffd700;
 }
 
-/* カラーパレット定義（ハロウィン） */
+/* ハロウィン */
 :root[data-theme="halloween"] {
-    --color-primary: #ff6600;
-    --color-primary-dark: #663a66;
-    --color-accent: #ffbb00;
-    --color-accent-dark:#006600;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #ff6600;
+  --color-primary-dark: #663a66;
+  --color-accent: #ffbb00;
+  --color-accent-dark: #006600;
 }
 
-/* カラーパレット定義（クリスマス） */
+/* クリスマス */
 :root[data-theme="christmas"] {
-    --color-primary: #cc0000;
-    --color-primary-dark: #006622;
-    --color-accent: #c99c33;
-    --color-accent-dark:#662200;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #cc0000;
+  --color-primary-dark: #006622;
+  --color-accent: #c99c33;
+  --color-accent-dark: #662200;
 }
 
-/* カラーパレット定義（お正月） */
+/* お正月 */
 :root[data-theme="newyear"] {
-    --color-primary: #c20000;
-    --color-primary-dark: #b00000;
-    --color-accent: #d0a900;
-    --color-accent-dark:#bb9800;
-    --color-bg-light: #ffffff;
-    --color-text-dark: #333333;
-    --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-primary: #c20000;
+  --color-primary-dark: #b00000;
+  --color-accent: #d0a900;
+  --color-accent-dark: #bb9800;
+}
+
+/* 背景が暗いイベントでは、ナビ・フッター・見出しボックスの文字を白にする */
+:root[data-theme="tanabata"],
+:root[data-theme="halloween"],
+:root[data-theme="christmas"],
+:root[data-theme="newyear"] {
+  --color-on-dark: var(--color-white);
+  --color-hover: rgba(0, 0, 0, 0.25);
+}
+
+/* 背景が明るいイベントでは、トップページの大見出しを濃い色にする */
+:root[data-theme="setubun"],
+:root[data-theme="whiteday"],
+:root[data-theme="shuubun"] {
+  --color-title: var(--color-text-dark);
 }

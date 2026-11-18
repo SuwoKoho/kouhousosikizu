@@ -1,73 +1,9 @@
-/* ===== 過去のデータページCSS ===== */
+/* ===== 資料・データページCSS ===== */
 
-/* メインコンテンツ */
-main {
-    padding-top: 80px;
-    padding-bottom: 150px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 900px;
-    margin: 0 auto;
-    width: 90%;
-}
-h1{
-    color: var(--color-accent);
-    margin-bottom: 10px;
-}
-
-.file-intro {
-    font-size: 1.1em;
-}
-
-/* 各部署ボックスの全体デザイン */
-.file-department {
-    background: var(--color-bg-light);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 6px 12px var(--color-text-dark);
-    margin-bottom: 30px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-/* 部署ボックスにマウスが乗ったときの効果 */
-.file-department:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px var(--color-shadow);
-}
-
-/* 部署名見出し */
-.file-department h2 {
-    color: var(--color-accent);
-    margin: 0 0 15px 0;
-    font-size: 1.6em;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--color-accent);
-}
-
-/* リンクボタンのデザイン */
-.drive-link {
-    display: inline-block;
-    background-color: var(--color-accent);
-    color: var(--color-bg-light);
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    transition: background-color 0.25s, transform 0.1s;
-}
-/* リンクボタンにマウスが乗ったときの効果 */
-.drive-link:hover {
-    background-color: var(--color-accent-dark);
-    transform: scale(1.05);
-}
-
-/* エラーメッセージ */
-#loading-error {
-    color: red;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
+.dept-card h2 {
+  margin: 0 0 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 1.6rem;
 }

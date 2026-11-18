@@ -1,118 +1,46 @@
-<!-- 組織図ページのHTML -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
+  <link rel="apple-touch-icon" href="icon.png">
   <title>静岡大学吹奏楽団 広報係 HP 組織図</title>
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap">
+
+  <!-- 共通デザイン -->
   <link rel="stylesheet" href="colors.css">
   <link rel="stylesheet" href="common.css">
+
+  <!-- 組織図ページ専用 -->
   <link rel="stylesheet" href="org.css">
+
   <script src="common.js" defer></script>
   <script src="org.js" defer></script>
 </head>
 
 <body>
-  <canvas id="particle-bg"></canvas>
-  <div class="navbar"> 
-    <div class="menu-toggle" aria-label="メニューを開く/閉じる">
-      <div></div><div></div><div></div>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">トップページ</a>
-      <a href="org.html">組織図</a>
-      <a href="file.html">資料・データ</a>
-      <a href="schedule.html">スケジュール</a>
-    </div>
-  </div>
-  
-  <main>
+  <!-- ナビ・フッター・背景パーティクルは common.js が差し込みます -->
+  <main class="page-main">
     <div class="page-header-box">
       <h1>組織図</h1>
       <p>広報係の組織図についてまとめたページです。</p>
     </div>
 
-    <div class="org-chart">
-      <div class="department" data-dept-name="広報部">
-      <h3>広報部</h3>
-        <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
-        <div class="member-list-container" style="display: none;">
-        </div>
-        <div class="tasks">
-          <div class="task" data-task-name="広報活動日" data-dept-name="広報部">
-            <span class="title">広報活動日</span>
-          </div>
-          <div class="task" data-task-name="広報アンサンブル" data-dept-name="広報部">
-            <span class="title">広報アンサンブル</span>
-          </div>
-          <div class="task" data-task-name="駅チラシ" data-dept-name="広報部">
-            <span class="title">駅チラシ</span>
-          </div>
-          <div class="task" data-task-name="構内ポスターツアー、構内チラシ配り" data-dept-name="広報部">
-            <span class="title">構内ポスターツアー、構内チラシ配り</span>
-          </div>
-          <div class="task" data-task-name="案内状" data-dept-name="広報部">
-            <span class="title">案内状</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="department" data-dept-name="制作・管理部">
-      <h3>制作・管理部</h3>
-        <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
-        <div class="member-list-container" style="display: none;">
-        </div>
-        <div class="tasks">
-          <div class="task" data-task-name="チラシ作成" data-dept-name="制作・管理部">
-            <span class="title">チラシ作成</span>
-          </div>
-          <div class="task" data-task-name="パンフレット作成" data-dept-name="制作・管理部">
-            <span class="title">パンフレット作成</span>
-          </div>
-          <div class="task" data-task-name="チラシ管理" data-dept-name="制作・管理部">
-            <span class="title">チラシ管理</span>
-          </div>
-          <div class="task" data-task-name="備品管理" data-dept-name="制作・管理部">
-            <span class="title">備品管理</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="department" data-dept-name="許可申請部">
-      <h3>許可申請部</h3>
-        <button class="member-toggle" aria-expanded="false">メンバーを表示 ▼</button>
-        <div class="member-list-container" style="display: none;">
-        </div>
-        <div class="tasks">
-          <div class="task" data-task-name="挟み込み、置きチラシ" data-dept-name="許可申請部">
-            <span class="title">挟み込み、置きチラシ</span>
-          </div>
-          <div class="task" data-task-name="事業報告、後援申請" data-dept-name="許可申請部">
-            <span class="title">事業報告、後援申請</span>
-          </div>
-          <div class="task" data-task-name="バンドジャーナル" data-dept-name="許可申請部">
-            <span class="title">バンドジャーナル</span>
-          </div>
-          <div class="task" data-task-name="プレイガイド" data-dept-name="許可申請部">
-            <span class="title">プレイガイド</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-text"></div>
-        </div>
-    </div>
+    <!-- 部署・メンバー・仕事は site_data.json の organization から org.js が作ります -->
+    <div class="dept-list" id="org-chart"></div>
   </main>
 
-  <footer>
-    <div class="main-content">
-      <p>&copy; 2026 静岡大学吹奏楽団. All Rights Reserved.</p>
+  <!-- 仕事の詳細（モーダル） -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button type="button" class="close" aria-label="閉じる">&times;</button>
+      <div id="modal-text"></div>
     </div>
-  </footer>
+  </div>
 </body>
 </html>

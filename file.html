@@ -1,58 +1,38 @@
-<!-- 過去のデータページのHTML -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
-  <title>静岡大学吹奏楽団 広報係 HP 過去のデータ</title>
+  <link rel="apple-touch-icon" href="icon.png">
+  <title>静岡大学吹奏楽団 広報係 HP 資料・データ</title>
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap">
+
+  <!-- 共通デザイン -->
   <link rel="stylesheet" href="colors.css">
   <link rel="stylesheet" href="common.css">
+
+  <!-- 資料・データページ専用 -->
   <link rel="stylesheet" href="file.css">
+
   <script src="common.js" defer></script>
   <script src="file.js" defer></script>
 </head>
 
 <body>
-  <canvas id="particle-bg"></canvas>
-  <div class="navbar">
-    <div class="menu-toggle" aria-label="メニューを開く/閉じる">
-      <div></div><div></div><div></div>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">トップページ</a>
-      <a href="org.html">組織図</a>
-      <a href="file.html">資料・データ</a>
-      <a href="schedule.html">スケジュール</a>
-    </div>
-  </div>
-
-  <main>
+  <!-- ナビ・フッター・背景パーティクルは common.js が差し込みます -->
+  <main class="page-main">
     <div class="page-header-box">
       <h1>資料・データ</h1>
       <p>広報係の資料についてまとめたページです。</p>
     </div>
-    <div class="file-container" id="file-container">
-      <div class="file-department" data-dept-name="広報部">
-        <h2>広報部</h2>
-      </div>
-      <div class="file-department" data-dept-name="制作・管理部">
-        <h2>制作・管理部</h2>
-      </div>
-      <div class="file-department" data-dept-name="許可申請部">
-        <h2>許可申請部</h2>
-      </div>
-      <div class="file-department" data-dept-name="その他">
-        <h2>その他</h2>
-      </div>
-      <div id="loading-error" style="color: red; display: none;">資料の読み込みに失敗しました。Live Serverで開いているか、`site_data.json`をご確認ください。</div>
-    </div>
+
+    <!-- 部署ごとのカードは、common.js の DEPARTMENTS と site_data.json の file_data から file.js が作ります -->
+    <div class="dept-list" id="file-list"></div>
   </main>
-    
-  <footer>
-    <div class="main-content">
-      <p>&copy; 2026 静岡大学吹奏楽団. All Rights Reserved.</p>
-    </div>
-  </footer>
 </body>
 </html>

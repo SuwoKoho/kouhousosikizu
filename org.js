@@ -1,98 +1,93 @@
 /* ===== 組織図ページJS ===== */
-let globalOrgData = {};
+(() => {
+  "use strict";
 
-document.addEventListener('DOMContentLoaded', () => {
+  const chart = document.getElementById("org-chart");
+  const modal = document.getElementById("modal");
+  const modalText = document.getElementById("modal-text");
+  const closeButton = modal.querySelector(".close");
+  let lastFocused = null; // モーダルを閉じたときに戻すフォーカス先
 
-    const departments = document.querySelectorAll('.department');
-    const memberToggles = document.querySelectorAll('.member-toggle');
+  /* ===== モーダル ===== */
+  function openModal(taskName, taskData, trigger) {
+    lastFocused = trigger;
 
-    fetch('site_data.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('サイトデータの読み込みに失敗しました');
-            }
-            return response.json();
-        })
-        .then(siteData => {
-            globalOrgData = siteData.organization;
-            
-            departments.forEach(dept => {
-                const deptName = dept.dataset.deptName;
-                const orgData = globalOrgData;
+    const title = el("h3", "", taskName);
+    title.id = "modal-title";
+    modalText.replaceChildren(title, el("p", "", taskData.description || "このタスクの情報は現在準備中です。"));
 
-                if (orgData[deptName]) {
-                    const data = orgData[deptName];
-                    const container = dept.querySelector('.member-list-container');
-                    let html = `<span class="manager">部長：${data.top}</span>`;
-                    html += `<ul class="member-list">`;
-                    data.members.forEach(member => {
-                        html += `<li>${member}</li>`;
-                    });
-                    html += `</ul>`;
-                    container.innerHTML = html;
-                }
-            });
-        })
-        .catch(error => {
-            console.error('組織データの処理中にエラーが発生しました:', error);
-            departments.forEach(dept => {
-                const container = dept.querySelector('.member-list-container');
-                container.innerHTML = '<p style="color: red;">データ読み込みに失敗しました。</p>';
-            });
-        });
+    if (taskData.pdf_link) {
+      const link = el("a", "accent-button", "詳細PDFを見る");
+      link.href = taskData.pdf_link;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      modalText.append(link);
+    }
 
-    memberToggles.forEach(button => {
-        button.addEventListener('click', () => {
-            const container = button.nextElementSibling;
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-            if (isExpanded) {
-                container.style.display = 'none';
-                button.setAttribute('aria-expanded', 'false');
-                button.innerHTML = 'メンバーを表示 ▼';
-            }
-            else {
-                container.style.display = 'block';
-                button.setAttribute('aria-expanded', 'true');
-                button.innerHTML = 'メンバーを非表示 ▲';
-            }
-        });
+    modal.classList.add("is-open");
+    closeButton.focus();
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    if (lastFocused) lastFocused.focus();
+  }
+
+  closeButton.addEventListener("click", closeModal);
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+
+  /* ===== 部署カード ===== */
+  function createMemberSection(dept) {
+    const toggle = el("button", "member-toggle", "メンバーを表示 ▼");
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+
+    const box = el("div", "member-list-container");
+    box.hidden = true;
+    box.append(el("span", "manager", `部長：${dept.top}`));
+    const list = el("ul", "member-list");
+    (dept.members || []).forEach((member) => list.append(el("li", "", member)));
+    box.append(list);
+
+    toggle.addEventListener("click", () => {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      box.hidden = isExpanded;
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      toggle.textContent = isExpanded ? "メンバーを表示 ▼" : "メンバーを非表示 ▲";
     });
 
-    const tasks = document.querySelectorAll('.task');
-    const modal = document.getElementById('modal');
-    const modalText = document.getElementById('modal-text');
-    const closeBtn = document.querySelector('.close');
+    return [toggle, box];
+  }
 
-    tasks.forEach(task => {
-        
-        task.addEventListener('click', () => {
-            const taskName = task.dataset.taskName;
-            const deptName = task.dataset.deptName;
-            const orgData = globalOrgData;
-            if (orgData[deptName] && orgData[deptName].tasks && orgData[deptName].tasks[taskName]) {
-                const taskData = orgData[deptName].tasks[taskName];
-                const title = taskName;
-                const description = taskData.description;
-                const pdfLink = taskData.pdf_link;
-                let modalHtml = `<h3>${title}</h3><p>${description}</p>`;
-                modalHtml += `<a href="${pdfLink}" target="_blank" class="pdf-button">詳細PDFを見る</a>`;
-                modalText.innerHTML = modalHtml;
-                modal.style.display = 'flex';
-            } 
-            else {
-                modalText.innerHTML = `<h3>情報が見つかりません</h3><p>このタスクの情報は現在準備中です。</p>`;
-                modal.style.display = 'flex';
-            }
-        });
+  function createTaskList(tasks) {
+    const list = el("div", "tasks");
+    Object.entries(tasks || {}).forEach(([name, data]) => {
+      const button = el("button", "task", name);
+      button.type = "button";
+      button.addEventListener("click", () => openModal(name, data, button));
+      list.append(button);
     });
+    return list;
+  }
 
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
+  function renderChart(organization) {
+    if (!organization) throw new Error("organization がありません");
+    Object.entries(organization).forEach(([name, dept]) => {
+      const card = el("section", "dept-card");
+      card.append(el("h3", "", name), ...createMemberSection(dept), createTaskList(dept.tasks));
+      chart.append(card);
     });
+  }
 
-    window.addEventListener('click', e => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
+  loadSiteData()
+    .then((data) => renderChart(data.organization))
+    .catch((error) => {
+      console.error("組織データの処理中にエラーが発生しました:", error);
+      showLoadError(chart);
     });
-});
+})();

@@ -1,277 +1,186 @@
 /* ===== トップページCSS ===== */
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 120px);
-    padding: 100px 20px 40px;
-    text-align: center;
+.top-main {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 100px 20px 40px;
+  text-align: center;
 }
 
 /* 静岡大学吹奏楽団 */
-.top-title p {
-    margin: 0 0 10px 0;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--color-bg-light);
-    letter-spacing: 0.08em;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+.top-title {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+  letter-spacing: 0.08em;
+  color: var(--color-title);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* 広報係 */
-.sub-title h1 {
-    margin: 0 0 30px 0;
-    font-size: 5.5rem;
-    font-weight: 800;
-    color: var(--color-bg-light);
-    letter-spacing: 0.1em;
-    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+.top-sub-title {
+  margin: 0 0 30px;
+  font-size: 5.5rem;
+  letter-spacing: 0.1em;
+  color: var(--color-title);
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 768px) {
-    .top-title p { font-size: 1.5rem; }
-    .sub-title h1 { font-size: 3.5rem; }
+  .top-title { font-size: 1.5rem; }
+  .top-sub-title { font-size: 3.5rem; }
 }
 
-/* イベントイメージ */
+/* イベントイメージ（画像は top.js が images/<テーマ名>.png を設定します） */
 #event-visual {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: 1;
-    filter: drop-shadow(0 0 15px var(--color-accent));
-    display: none;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 0 15px var(--color-accent));
 }
 
-.top-title, .sub-title, main {
-    position: relative;
-    z-index: 10;
+#event-visual.is-active {
+  display: block;
 }
 
-:root[data-theme="setubun"] #event-visual { background-image: url("images/setubun.png"); }
-:root[data-theme="valentine"] #event-visual { background-image: url("images/valentine.png"); }
-:root[data-theme="hinamaturi"] #event-visual { background-image: url("images/hinamaturi.png"); }
-:root[data-theme="whiteday"] #event-visual { background-image: url("images/whiteday.png"); }
-:root[data-theme="tanabata"] #event-visual { background-image: url("images/tanabata.png"); }
-:root[data-theme="uminohi"] #event-visual { background-image: url("images/uminohi.png"); }
-:root[data-theme="yamanohi"] #event-visual { background-image: url("images/yamanohi.png"); }
-:root[data-theme="shuubun"] #event-visual { background-image: url("images/shuubun.png"); }
-:root[data-theme="halloween"] #event-visual { background-image: url("images/halloween.png"); }
-:root[data-theme="christmas"] #event-visual { background-image: url("images/christmas.png"); }
-:root[data-theme="newyear"] #event-visual { background-image: url("images/newyear.png"); }
-
-:root[data-theme] #event-visual {
-    display: block;
-}
-
-/* 秘密の音符ボタン */
+/* ===== 秘密の音符ボタン ===== */
 #secretNote {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 26px;
-    opacity: 0.5;
-    cursor: pointer;
-    user-select: none;
-    z-index: 150;
-    transition: transform 0.2s, opacity 0.2s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 26px;
+  opacity: 0.5;
+  cursor: pointer;
+  user-select: none;
+  z-index: 150;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 #secretNote:hover {
-    opacity: 1;
-    transform: scale(1.3) rotate(10deg);
+  opacity: 1;
+  transform: scale(1.3) rotate(10deg);
 }
 
-#secretNote:focus-visible {
-    outline: 2px solid #000000;
-    outline-offset: 4px;
-}
-
-/* ========================================
-   トップページ：音符の会話機能
-======================================== */
-
-/* 音符の吹き出し */
+/* ===== 音符の吹き出し ===== */
 .note-dialog {
-    position: fixed;
-    z-index: 10003;
-
-    box-sizing: border-box;
-    width: max-content;
-    max-width: min(300px, calc(100vw - 32px));
-
-    padding: 14px 18px;
-
-    background: #000000;
-    color: #ffffff;
-
-    border: 2px solid #ffffff;
-    border-radius: 5px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-
-    font-size: 14px;
-    line-height: 1.7;
-
-    overflow-wrap: anywhere;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(8px);
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
+  position: fixed;
+  z-index: 10003;
+  box-sizing: border-box;
+  padding: 14px 18px;
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
 }
 
-/* 吹き出しを表示 */
 .note-dialog.is-visible {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-/* 吹き出しの三角形 */
+/* 吹き出しの三角形（位置は top.js が --arrow-left に入れます） */
 .note-dialog::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: -8px;
-    left: 260px;
-
-    width: 12px;
-    height: 12px;
-
-    background: #000000;
-
-    border-right: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-
-    transform: rotate(45deg);
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: var(--arrow-left, 260px);
+  width: 12px;
+  height: 12px;
+  background: #000000;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(45deg);
 }
 
-/* 吹き出しの文章 */
 .note-dialog-text {
-    margin: 0;
-
-    white-space: pre-wrap;
+  margin: 0;
+  white-space: pre-wrap;
 }
 
-
-/* ========================================
-   トップページ：掃除モード
-======================================== */
-
-/* 掃除モードの画面 */
+/* ===== 掃除モード ===== */
 .cleaning-overlay {
-    position: fixed;
-    inset: 0;
-
-    z-index: 10000;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    box-sizing: border-box;
-    padding: 24px;
-
-    background: rgba(15, 15, 25, 0.96);
-    color: #ffffff;
-
-    text-align: center;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition:
-        opacity 0.5s ease,
-        visibility 0.5s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 24px;
+  background: rgba(15, 15, 25, 0.96);
+  color: #ffffff;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-/* 掃除モード開始 */
 .cleaning-overlay.is-active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
-/* メッセージ全体 */
 .cleaning-message {
-    width: 100%;
-    max-width: 480px;
-
-    line-height: 2;
+  width: 100%;
+  max-width: 480px;
+  line-height: 2;
 }
 
-/* 見出し */
 .cleaning-message h2 {
-    margin-bottom: 20px;
-
-    font-size: clamp(22px, 5vw, 32px);
+  margin-bottom: 20px;
+  font-size: clamp(22px, 5vw, 32px);
+  white-space: pre-wrap;
 }
 
-/* 説明文 */
 .cleaning-message p {
-    font-size: 15px;
+  font-size: 15px;
 }
 
-/* 元に戻すボタン */
 .cleaning-restore-button {
-    display: inline-block;
-
-    margin-top: 24px;
-    padding: 12px 24px;
-
-    border: 1px solid #ffffff;
-    border-radius: 24px;
-
-    background: #ffffff;
-    color: #222222;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease, 
-        color 0.2s ease;
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 24px;
+  border: 1px solid #ffffff;
+  border-radius: 24px;
+  background: #ffffff;
+  color: #222222;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* ボタンにマウスを乗せたとき */
 .cleaning-restore-button:hover {
-    background: transparent;
-    color: #ffffff;
+  background: transparent;
+  color: #ffffff;
 }
 
-/* キーボード操作時のフォーカス */
 .cleaning-restore-button:focus-visible {
-    outline: 3px solid #000000;
-    outline-offset: 4px;
-}
-
-
-/* ========================================
-   動きを控えめにする設定への対応
-======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-    .note-dialog,
-    .cleaning-overlay,
-    .cleaning-restore-button {
-        transition: none;
-    }
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
 }

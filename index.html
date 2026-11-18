@@ -6,43 +6,33 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="apple-touch-icon" href="icon.png">
   <title>静岡大学吹奏楽団 広報係 HP トップページ</title>
+
+  <!-- フォント -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@900&display=swap">
+
+  <!-- 共通デザイン -->
   <link rel="stylesheet" href="colors.css">
   <link rel="stylesheet" href="common.css">
+
+  <!-- トップページ専用 -->
   <link rel="stylesheet" href="top.css">
+
   <script src="common.js" defer></script>
   <script src="top.js" defer></script>
 </head>
 
 <body>
+  <!-- ナビ・フッター・背景パーティクルは common.js が差し込みます -->
   <div id="event-visual"></div>
-  <canvas id="particle-bg"></canvas>
 
-  <div class="navbar">
-    <div class="menu-toggle" aria-label="メニューを開く/閉じる">
-      <div></div><div></div><div></div>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">トップページ</a>
-      <a href="org.html">組織図</a>
-      <a href="file.html">資料・データ</a>
-      <a href="schedule.html">スケジュール</a>
-    </div>
-  </div>
-
-  <main>
-    <div class="top-title">
-      <p>静岡大学吹奏楽団</p>
-    </div>
-    <div class="sub-title">
-      <h1>広報係</h1>
-    </div>
+  <main class="top-main">
+    <p class="top-title">静岡大学吹奏楽団</p>
+    <h1 class="top-sub-title">広報係</h1>
   </main>
 
   <!-- 秘密の音符ボタン -->
-<div id="secretNote" role="button" tabindex="0">♩</div>
-
-  <footer>
-    <p>&copy; 2026 静岡大学吹奏楽団. All Rights Reserved.</p>
-  </footer>
+  <button type="button" id="secretNote" aria-label="音符">♩</button>
 </body>
 </html>
